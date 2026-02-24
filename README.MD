@@ -15,6 +15,9 @@ Un mini-jeu de plateau en mode console développé en C. Contrairement au Puissa
 Ce projet a servi de base pour l'apprentissage de :
 
 *Matrices 2D : Manipulation d'un plateau de jeu via tab[50][50].
+
 *Logique de Victoire : Algorithmes de vérification horizontale, verticale et diagonale.
+
 *Gestion des Sauts : Utilisation de l'instruction goto pour la gestion des tours et les erreurs de saisie.
+
 *Boucle de Jeu : Système de "Rejouer" et gestion des tours alternés entre deux joueurs.
