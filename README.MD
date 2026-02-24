@@ -2,6 +2,7 @@
 
 Un mini-jeu de plateau en mode console développé en C. Contrairement au Puissance 4 classique, ce projet permet de définir une taille de grille personnalisée (NxN) et nécessite d'aligner des pions sur toute la longueur de la grille pour gagner.
 
+
   0    1    2  
  ___  ___  ___ 
 ¦_O_¦¦_X_¦¦___¦  0
