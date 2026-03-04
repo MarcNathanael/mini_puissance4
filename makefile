@@ -2,11 +2,12 @@
 CC = gcc
 CFLAGS = -Wall -Wextra
 TARGET = puissance4
+SRCS = main.c fonction.c
 
 all: $(TARGET)
 
-$(TARGET): main.c
-	$(CC) $(CFLAGS) main.c -o $(TARGET)
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET)
 
 clean:
-	rm -f $(TARGET)
+	rm -f $(OBJS) $(TARGET)

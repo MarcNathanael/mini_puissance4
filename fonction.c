@@ -130,48 +130,70 @@ void jouer_tour(char tab[MAX_SIZE][MAX_SIZE], int m, int t, int *index_ptr) {
     int a, b, n;
     char pion[2] = {'O', 'X'};
 
-    if ((t % 2) != 0) //rah paire
-    {
-        n = 0; // pion utiliser O
-        printf("\tJOUEUR 1 : \n");
-        joueur1:
-        printf("Entrer la position de votre pion O:\n");
-        printf("N° ligne : ");
-        scanf("%d", &a);
-        printf("N° colonne : ");
-        scanf("%d", &b);
+    if ((t % 2) != 0) {
+        n = 0; // Joueur 1 (O)
         *index_ptr = 1;
-
-        if (tab[a][b] == pion[0] || tab[a][b] == pion[1]) {
-            printf("\tCette case est deja occupée \n");
-            goto joueur1;
-        }
-        if (a >= m || b >= m) {
-            printf("\tTaper une valeur de a et b inferieur a %d \n", m);
-            goto joueur1;
-        }
-    }
-    else // correspond à ton else if((t%2)==0)
-    {
-        n = 1; //pion utiliser 1
-        printf("\tJOUEUR 2 : \n");
-        joueur2:
-        printf("Entrer la position de votre pion X:\n");
-        printf("N° ligne : ");
-        scanf("%d", &a);
-        printf("N° colonne : ");
-        scanf("%d", &b);
-        *index_ptr = 2;
+        printf("\tJOUEUR 1 : \n");
         
-        if (tab[a][b] == pion[0] || tab[a][b] == pion[1]) {
-            printf("\tCette case est deja occupée ! \n");
+        joueur1:
+        printf("Entrer la position de votre pion O :\n");
+
+        printf("N° ligne : ");
+        if (scanf("%d", &a) != 1) {
+            printf("\t⚠️ Erreur : Tapez un chiffre, pas une lettre !\n");
+            while(getchar() != '\n'); 
+            goto joueur1;
+        }
+
+
+        printf("N° colonne : ");
+        if (scanf("%d", &b) != 1) {
+            printf("\t⚠️ Erreur : Tapez un chiffre, pas une lettre !\n");
+            while(getchar() != '\n');
+            goto joueur1;
+        }
+
+        if (a < 0 || a >= m || b < 0 || b >= m) {
+            printf("\t❌ Valeur hors limites ! (Max %d)\n", m - 1);
+            goto joueur1;
+        }
+        if (tab[a][b] != ' ') {
+            printf("\t🚫 Cette case est déjà occupée !\n");
+            goto joueur1;
+        }
+    } 
+    else {
+        n = 1; // Joueur 2 (X)
+        *index_ptr = 2;
+        printf("\tJOUEUR 2 : \n");
+        
+        joueur2:
+        printf("Entrer la position de votre pion X :\n");
+        
+        printf("N° ligne : ");
+        if (scanf("%d", &a) != 1) {
+            printf("\t⚠️ Erreur : Tapez un chiffre !\n");
+            while(getchar() != '\n');
             goto joueur2;
         }
-        if (a >= m || b >= m) {
-            printf("\tTaper une valeur de a et b inferieur a %d \n", m);
+
+        printf("N° colonne : ");
+        if (scanf("%d", &b) != 1) {
+            printf("\t⚠️ Erreur : Tapez un chiffre !\n");
+            while(getchar() != '\n');
+            goto joueur2;
+        }
+
+        if (a < 0 || a >= m || b < 0 || b >= m) {
+            printf("\t❌ Valeur hors limites ! (Max %d)\n", m - 1);
+            goto joueur2;
+        }
+
+        if (tab[a][b] != ' ') {
+            printf("\t🚫 Cette case est déjà occupée !\n");
             goto joueur2;
         }
     }
 
-    tab[a][b] = pion[n]; // changement de la valeur d'un case du tableau
+    tab[a][b] = pion[n]; 
 }

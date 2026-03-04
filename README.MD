@@ -7,14 +7,14 @@ Un mini-jeu de plateau en mode console développé en C. Contrairement au Puissa
  ___  ___  ___ 
 ¦_O_¦¦_X_¦¦___¦  0
  ___  ___  ___ 
-¦____¦¦_O_¦¦___¦  1
+¦___¦¦_O_¦¦___¦  1
  ___  ___  ___ 
 ¦_X_¦¦___¦¦_O_¦  2
 
 ## Concept et aspect 
 Ce projet a servi de base pour l'apprentissage de :
 
-*Matrices 2D : Manipulation d'un plateau de jeu via tab[50][50].
+*Matrices 2D : Manipulation d'un plateau de jeu via tab[MAX_SIZE][MAX_SIZE].
 
 *Logique de Victoire : Algorithmes de vérification horizontale, verticale et diagonale.
 
