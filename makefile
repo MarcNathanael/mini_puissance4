@@ -6,8 +6,8 @@ SRCS = main.c fonction.c
 
 all: $(TARGET)
 
-$(TARGET): $(OBJS)
+$(TARGET): $(SRCS)
 	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET)
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(SRCS) $(TARGET)
